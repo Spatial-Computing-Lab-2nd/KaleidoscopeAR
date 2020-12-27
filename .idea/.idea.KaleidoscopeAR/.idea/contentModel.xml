@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Aguro" t="Include">
+          <e p="Script" t="Include">
+            <e p="ControllerManager.cs" t="Include" />
+            <e p="MoveBall.cs" t="Include" />
+          </e>
+        </e>
+        <e p="MagicLeap" t="Include">
+          <e p="Core" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Editor" t="Include">
+                <e p="MLBitMaskEditor.cs" t="Include" />
+                <e p="MLImageTrackerBehaviorEditor.cs" t="Include" />
+                <e p="MLInputModuleBehaviorEditor.cs" t="Include" />
+                <e p="MLWorldScaleBehaviorEditor.cs" t="Include" />
+                <e p="Movement" t="Include">
+                  <e p="MLMovementBehaviorEditor.cs" t="Include" />
+                  <e p="MLMovementColliderBehaviorEditor.cs" t="Include" />
+                  <e p="MLMovementSettingsBehaviorManagerEditor.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Input" t="Include">
+                <e p="MLControllerConnectionHandlerBehavior.cs" t="Include" />
+                <e p="MLInputModuleBehavior.cs" t="Include" />
+                <e p="MLInputRaycasterBehavior.cs" t="Include" />
+              </e>
+              <e p="MLContactsBehavior.cs" t="Include" />
+              <e p="MLFoundObjectsBehavior.cs" t="Include" />
+              <e p="MLHandMeshingBehavior.cs" t="Include" />
+              <e p="MLHandTrackingBehavior.cs" t="Include" />
+              <e p="MLHeadposeCanvasBehavior.cs" t="Include" />
+              <e p="MLImageTrackerBehavior.cs" t="Include" />
+              <e p="MLMediaPlayerCEA708Parser.cs" t="Include" />
+              <e p="MLMusicServiceBehavior.cs" t="Include" />
+              <e p="MLPlanesBehavior.cs" t="Include" />
+              <e p="MLPrivilegeRequesterBehavior.cs" t="Include" />
+              <e p="MLRaycastBehavior.cs" t="Include" />
+              <e p="MLSceneOptimizerBehavior.cs" t="Include" />
+              <e p="MLWorldScaleBehavior.cs" t="Include" />
+              <e p="Movement" t="Include">
+                <e p="MLMovementBehavior.cs" t="Include" />
+                <e p="MLMovementColliderBehavior.cs" t="Include" />
+                <e p="MLMovementSettingsManagerBehavior.cs" t="Include" />
+              </e>
+              <e p="Persistence" t="Include">
+                <e p="BindingsLocalStorage.cs" t="Include" />
+                <e p="TransformBinding.cs" t="Include" />
+              </e>
+              <e p="StarterKit" t="Include">
+                <e p="MLEyesStarterKit.cs" t="Include" />
+                <e p="MLFoundObjectsStarterKit.cs" t="Include" />
+                <e p="MLHandTrackingStarterKit.cs" t="Include" />
+                <e p="MLImageTrackerStarterKit.cs" t="Include" />
+                <e p="MLLightingTrackingStarterKit.cs" t="Include" />
+                <e p="MLLocationStarterKit.cs" t="Include" />
+                <e p="MLPlanesStarterKit.cs" t="Include" />
+                <e p="MLPrivilegesStarterKit.cs" t="Include" />
+                <e p="MLRaycastStarterKit.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="StereoVideoRender.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Examples" t="Include">
+            <e p="Assets" t="Include">
+              <e p="Models" t="Include">
+                <e p="Controller" t="Include">
+                  <e p="Shaders" t="Include">
+                    <e p="ControllerDepthMask.shader" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="Intermediate" t="Include">
+              <e p="Documentation" t="Include">
+                <e p="Resources" t="Include">
+                  <e p="English" t="Include">
+                    <e p="AudioCapture_Controls.txt" t="Include" />
+                    <e p="AudioCapture_Overview.txt" t="Include" />
+                    <e p="Contacts_Controls.txt" t="Include" />
+                    <e p="Contacts_Overview.txt" t="Include" />
+                    <e p="Control_Controls.txt" t="Include" />
+                    <e p="Control_Overview.txt" t="Include" />
+                    <e p="HandMeshing_Controls.txt" t="Include" />
+                    <e p="HandMeshing_Overview.txt" t="Include" />
+                    <e p="HandTracking_Controls.txt" t="Include" />
+                    <e p="HandTracking_Overview.txt" t="Include" />
+                    <e p="ImageCapture_Controls.txt" t="Include" />
+                    <e p="ImageCapture_Overview.txt" t="Include" />
+                    <e p="ImageTracker_Controls.txt" t="Include" />
+                    <e p="ImageTracker_Overview.txt" t="Include" />
+                    <e p="LightTracking_Controls.txt" t="Include" />
+                    <e p="LightTracking_Overview.txt" t="Include" />
+                    <e p="Location_Controls.txt" t="Include" />
+                    <e p="Location_Overview.txt" t="Include" />
+                    <e p="Meshing_Controls.txt" t="Include" />
+                    <e p="Meshing_Overview.txt" t="Include" />
+                    <e p="MobileApp_Controls.txt" t="Include" />
+                    <e p="MobileApp_Overview.txt" t="Include" />
+                    <e p="PersistentCoordinateFrames_Controls.txt" t="Include" />
+                    <e p="PersistentCoordinateFrames_Overview.txt" t="Include" />
+                    <e p="Planes_Controls.txt" t="Include" />
+                    <e p="Planes_Overview.txt" t="Include" />
+                    <e p="Raycast_Controls.txt" t="Include" />
+                    <e p="Raycast_Overview.txt" t="Include" />
+                    <e p="VideoCapture_Controls.txt" t="Include" />
+                    <e p="VideoCapture_Overview.txt" t="Include" />
+                    <e p="VirtualKeyboard_Controls.txt" t="Include" />
+                    <e p="VirtualKeyboard_Overview.txt" t="Include" />
+                    <e p="WacomTablet_Controls.txt" t="Include" />
+                    <e p="WacomTablet_Overview.txt" t="Include" />
+                    <e p="WorldScale_Controls.txt" t="Include" />
+                    <e p="WorldScale_Overview.txt" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="Plugins" t="Include">
+              <e p="Lumin" t="Include">
+                <e p="manifest.xml" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="AudioCaptureExample.cs" t="Include" />
+              <e p="Common" t="Include">
+                <e p="DestroyAfterTime.cs" t="Include" />
+                <e p="FaceCamera.cs" t="Include" />
+                <e p="FaceTargetPosition.cs" t="Include" />
+                <e p="PathAroundObject.cs" t="Include" />
+                <e p="SpriteSequenceAnimation.cs" t="Include" />
+                <e p="TransformFollower.cs" t="Include" />
+              </e>
+              <e p="ContactsExample.cs" t="Include" />
+              <e p="ControlExample.cs" t="Include" />
+              <e p="HandMeshingExample.cs" t="Include" />
+              <e p="HandTrackingExample.cs" t="Include" />
+              <e p="ImageCaptureExample.cs" t="Include" />
+              <e p="ImageTrackerExample.cs" t="Include" />
+              <e p="LightTrackingExample.cs" t="Include" />
+              <e p="LocationExample.cs" t="Include" />
+              <e p="MeshingExample.cs" t="Include" />
+              <e p="MobileAppControllerVisualizer.cs" t="Include" />
+              <e p="MobileAppExample.cs" t="Include" />
+              <e p="PCFExample.cs" t="Include" />
+              <e p="PlanesExample.cs" t="Include" />
+              <e p="RaycastExample.cs" t="Include" />
+              <e p="Utility" t="Include">
+                <e p="ContentDragController.cs" t="Include" />
+                <e p="ContentDragHandler.cs" t="Include" />
+                <e p="ContentTap.cs" t="Include" />
+                <e p="ControllerStatsText.cs" t="Include" />
+                <e p="ControllerStatus.cs" t="Include" />
+                <e p="ControllerStatusIndicator.cs" t="Include" />
+                <e p="ControllerStatusText.cs" t="Include" />
+                <e p="ControllerTransform.cs" t="Include" />
+                <e p="MediaPlayer51SurroundEnabler.cs" t="Include" />
+                <e p="PlaceFromCamera.cs" t="Include" />
+                <e p="PrivilegeDeniedError.cs" t="Include" />
+                <e p="Ruler.cs" t="Include" />
+                <e p="VideoError.cs" t="Include" />
+                <e p="VirtualCursor.cs" t="Include" />
+                <e p="VirtualKeyboard.cs" t="Include" />
+              </e>
+              <e p="VideoCaptureExample.cs" t="Include" />
+              <e p="VirtualKeyboardExample.cs" t="Include" />
+              <e p="Visualizers" t="Include">
+                <e p="Contacts" t="Include">
+                  <e p="ContactAttributeItemVisualizer.cs" t="Include" />
+                  <e p="ContactItemVisualizer.cs" t="Include" />
+                  <e p="ContactPageVisualizer.cs" t="Include" />
+                  <e p="ContactsButtonVisualizer.cs" t="Include" />
+                  <e p="ContactsListPageVisualizer.cs" t="Include" />
+                  <e p="ContactsTextFieldVisualizer.cs" t="Include" />
+                  <e p="ContactsVisualizer.cs" t="Include" />
+                </e>
+                <e p="ControllerVisualizer.cs" t="Include" />
+                <e p="DeepSeaExplorerLauncher.cs" t="Include" />
+                <e p="DeepSpaceExplorerController.cs" t="Include" />
+                <e p="DeepSpaceExplorerLauncher.cs" t="Include" />
+                <e p="HandVisualizer.cs" t="Include" />
+                <e p="ImageTrackerVisualizer.cs" t="Include" />
+                <e p="KeyPoseVisualizer.cs" t="Include" />
+                <e p="MeshingVisualizer.cs" t="Include" />
+                <e p="MLRaycastVisualizer.cs" t="Include" />
+                <e p="PCFVisual.cs" t="Include" />
+                <e p="PCFVisualizer.cs" t="Include" />
+                <e p="PersistentBall.cs" t="Include" />
+                <e p="PlanesVisualizer.cs" t="Include" />
+                <e p="RawVideoCaptureVisualizer.cs" t="Include" />
+                <e p="VideoCaptureVisualizer.cs" t="Include" />
+                <e p="WacomTabletVisualizer.cs" t="Include" />
+              </e>
+              <e p="WacomTabletFeedbackExample.cs" t="Include" />
+              <e p="WorldScaleExample.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="BasicWorldSpace.shader" t="Include" />
+              <e p="DrawingCanvas.shader" t="Include" />
+              <e p="MeshWorldSpace.shader" t="Include" />
+              <e p="PlaneEdge.shader" t="Include" />
+              <e p="PointCloud.shader" t="Include" />
+              <e p="UnlitAdditiveTransparent.shader" t="Include" />
+              <e p="UnlitColorTransparent.shader" t="Include" />
+              <e p="UnlitRedToGrayscale.shader" t="Include" />
+              <e p="WorldVerticalWithFilter.shader" t="Include" />
+              <e p="WorldXZWithColor.shader" t="Include" />
+              <e p="WorldXZWithLerp.shader" t="Include" />
+            </e>
+            <e p="Streaming" t="Include">
+              <e p="Common" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="Utility" t="Include">
+                    <e p="MediaPlayerButton.cs" t="Include" />
+                    <e p="MediaPlayerSlider.cs" t="Include" />
+                    <e p="MediaPlayerToggle.cs" t="Include" />
+                    <e p="VirtualPointer.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+              <e p="MediaPlayer" t="Include">
+                <e p="Documentation" t="Include">
+                  <e p="Resources" t="Include">
+                    <e p="English" t="Include">
+                      <e p="MediaPlayer_Controls.txt" t="Include" />
+                      <e p="MediaPlayer_Overview.txt" t="Include" />
+                    </e>
+                  </e>
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="Editor" t="Include">
+                    <e p="SetupMediaPlayerExample.cs" t="Include" />
+                  </e>
+                  <e p="MediaPlayerExample.cs" t="Include" />
+                  <e p="MediaPlayerExampleCycler.cs" t="Include" />
+                </e>
+              </e>
+              <e p="MusicService" t="Include">
+                <e p="Documentation" t="Include">
+                  <e p="Resources" t="Include">
+                    <e p="English" t="Include">
+                      <e p="MusicService_Controls.txt" t="Include" />
+                      <e p="MusicService_Overview.txt" t="Include" />
+                      <e p="README.txt" t="Include" />
+                    </e>
+                  </e>
+                </e>
+                <e p="Plugins" t="Include">
+                  <e p="Lumin" t="Include">
+                    <e p="music_manifest.xml" t="Include" />
+                  </e>
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="Editor" t="Include">
+                    <e p="SetupMusicService.cs" t="Include" />
+                  </e>
+                  <e p="MusicServiceExample.cs" t="Include" />
+                  <e p="MusicServiceVisualizer.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="UI" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="UIButton.cs" t="Include" />
+                <e p="UIButtonGroup.cs" t="Include" />
+                <e p="UIInputVisualizer.cs" t="Include" />
+                <e p="UIScrollView.cs" t="Include" />
+                <e p="UIToggleButton.cs" t="Include" />
+                <e p="UserInterface.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Lumin" t="Include">
+            <e p="APIs" t="Include">
+              <e p="HandTracking" t="Include">
+                <e p="MLHandTracking.cs" t="Include" />
+                <e p="MLHandTrackingFinger.cs" t="Include" />
+                <e p="MLHandTrackingHand.cs" t="Include" />
+                <e p="MLHandTrackingKeyPoint.cs" t="Include" />
+                <e p="MLHandTrackingKeyPoseManager.cs" t="Include" />
+                <e p="MLHandTrackingThumb.cs" t="Include" />
+                <e p="MLHandTrackingWrist.cs" t="Include" />
+              </e>
+              <e p="Input" t="Include">
+                <e p="MLInput.cs" t="Include" />
+                <e p="MLInputController.cs" t="Include" />
+                <e p="MLInputControllerTouchpadGesture.cs" t="Include" />
+                <e p="MLInputDevice.cs" t="Include" />
+              </e>
+              <e p="MediaPlayer" t="Include">
+                <e p="IMediaPlayer.cs" t="Include" />
+                <e p="MLMediaPlayer.cs" t="Include" />
+                <e p="MLMediaPlayerEditor.cs" t="Include" />
+                <e p="MLMediaPlayerLumin.cs" t="Include" />
+              </e>
+              <e p="MLAPISingleton.cs" t="Include" />
+              <e p="MLAppConnect.cs" t="Include" />
+              <e p="MLAudio.cs" t="Include" />
+              <e p="MLBluetoothLE.cs" t="Include" />
+              <e p="MLCamera.cs" t="Include" />
+              <e p="MLCameraCaptureSettings.cs" t="Include" />
+              <e p="MLCameraResultSettings.cs" t="Include" />
+              <e p="MLCameraSettings.cs" t="Include" />
+              <e p="MLConnections.cs" t="Include" />
+              <e p="MLContacts.cs" t="Include" />
+              <e p="MLContactsListPage.cs" t="Include" />
+              <e p="MLContactsSearchPage.cs" t="Include" />
+              <e p="MLContactsSelectionPage.cs" t="Include" />
+              <e p="MLDispatch.cs" t="Include" />
+              <e p="MLEyes.cs" t="Include" />
+              <e p="MLFoundObjects.cs" t="Include" />
+              <e p="MLHandMeshing.cs" t="Include" />
+              <e p="MLHeadTracking.cs" t="Include" />
+              <e p="MLHeadTrackingMapEventsExtension.cs" t="Include" />
+              <e p="MLIdentity.cs" t="Include" />
+              <e p="MLIdentityProfile.cs" t="Include" />
+              <e p="MLIdentityProfileRequest.cs" t="Include" />
+              <e p="MLImageTracker.cs" t="Include" />
+              <e p="MLImageTrackerTarget.cs" t="Include" />
+              <e p="MLLightingTracking.cs" t="Include" />
+              <e p="MLLocale.cs" t="Include" />
+              <e p="MLLocation.cs" t="Include" />
+              <e p="MLMovement.cs" t="Include" />
+              <e p="MLMusicService.cs" t="Include" />
+              <e p="MLNetworking.cs" t="Include" />
+              <e p="MLPlanes.cs" t="Include" />
+              <e p="MLPrivileges.cs" t="Include" />
+              <e p="MLRaycast.cs" t="Include" />
+              <e p="MLResult.cs" t="Include" />
+              <e p="MLSecureStorage.cs" t="Include" />
+              <e p="MLTokenAgent.cs" t="Include" />
+              <e p="MLTokenAgentClientCredentials.cs" t="Include" />
+              <e p="MLTokenAgentClientCredentialsRequest.cs" t="Include" />
+              <e p="Persistence" t="Include">
+                <e p="IMLPCFBinding.cs" t="Include" />
+                <e p="MLPCF.cs" t="Include" />
+                <e p="MLPersistentCoordinateFrames.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Bindings" t="Include">
+              <e p="MagicLeapNativeBindings.cs" t="Include" />
+              <e p="MLAppConnectNativeBindings.cs" t="Include" />
+              <e p="MLAudioNativeBindings.cs" t="Include" />
+              <e p="MLBluetoothNativeBindings.cs" t="Include" />
+              <e p="MLCameraNativeBindings.cs" t="Include" />
+              <e p="MLConnectionsNativeBindings.cs" t="Include" />
+              <e p="MLContactsNativeBindings.cs" t="Include" />
+              <e p="MLControllerNativeBindings.cs" t="Include" />
+              <e p="MLCVCameraNativeBindings.cs" t="Include" />
+              <e p="MLDispatchNativeBindings.cs" t="Include" />
+              <e p="MLEyeNativeBindings.cs" t="Include" />
+              <e p="MLFoundObjectNativeBindings.cs" t="Include" />
+              <e p="MLHandMeshingNativeBindings.cs" t="Include" />
+              <e p="MLHandTrackingNativeBindings.cs" t="Include" />
+              <e p="MLHeadTrackingNativeBindings.cs" t="Include" />
+              <e p="MLIdentityNativeBindings.cs" t="Include" />
+              <e p="MLImageNativeBindings.cs" t="Include" />
+              <e p="MLImageTrackerNativeBindings.cs" t="Include" />
+              <e p="MLInputNativeBindings.cs" t="Include" />
+              <e p="MLLightingTrackingNativeBindings.cs" t="Include" />
+              <e p="MLLocaleNativeBindings.cs" t="Include" />
+              <e p="MLLocationNativeBindings.cs" t="Include" />
+              <e p="MLMediaErrorNativeBindings.cs" t="Include" />
+              <e p="MLMediaPlayerNativeBindings.cs" t="Include" />
+              <e p="MLMovementNativeBindings.cs" t="Include" />
+              <e p="MLMusicServiceNativeBindings.cs" t="Include" />
+              <e p="MLNetworkingNativeBindings.cs" t="Include" />
+              <e p="MLPCFNativeBindings.cs" t="Include" />
+              <e p="MLPlanesNativeBindings.cs" t="Include" />
+              <e p="MLPrivilegesNativeBindings.cs" t="Include" />
+              <e p="MLRaycastNativeBindings.cs" t="Include" />
+              <e p="MLSecureStorageNativeBindings.cs" t="Include" />
+              <e p="MLTokenAgentNativeBindings.cs" t="Include" />
+            </e>
+            <e p="Deprecated" t="Include">
+              <e p="IMLPersistentStorage.cs" t="Include" />
+              <e p="MagicLeapBitMask.cs" t="Include" />
+              <e p="MagicLeapDevice.cs" t="Include" />
+              <e p="MagicLeapNativeBindings.cs" t="Include" />
+              <e p="MLCameraCaptureSettings.cs" t="Include" />
+              <e p="MLCameraNativeBindings.cs" t="Include" />
+              <e p="MLCameraResultSettings.cs" t="Include" />
+              <e p="MLCameraSettings.cs" t="Include" />
+              <e p="MLConnections.cs" t="Include" />
+              <e p="MLContacts.cs" t="Include" />
+              <e p="MLContactsListPage.cs" t="Include" />
+              <e p="MLContactsSearchPage.cs" t="Include" />
+              <e p="MLContactsSelectionPage.cs" t="Include" />
+              <e p="MLContentBinding.cs" t="Include" />
+              <e p="MLContentBindings.cs" t="Include" />
+              <e p="MLControllerNativeBindings.cs" t="Include" />
+              <e p="MLCVCameraNativeBindings.cs" t="Include" />
+              <e p="MLDispatch.cs" t="Include" />
+              <e p="MLDispatcher.cs" t="Include" />
+              <e p="MLEye.cs" t="Include" />
+              <e p="MLFinger.cs" t="Include" />
+              <e p="MLHand.cs" t="Include" />
+              <e p="MLHandMesh.cs" t="Include" />
+              <e p="MLHandMeshing.cs" t="Include" />
+              <e p="MLHandMeshingNativeBindings.cs" t="Include" />
+              <e p="MLHands.cs" t="Include" />
+              <e p="MLHandTrackingNativeBindings.cs" t="Include" />
+              <e p="MLHeadTrackingNativeBindings.cs" t="Include" />
+              <e p="MLIdentityAttribute.cs" t="Include" />
+              <e p="MLIdentityNativeBindings.cs" t="Include" />
+              <e p="MLIdentityProfile.cs" t="Include" />
+              <e p="MLImageTarget.cs" t="Include" />
+              <e p="MLImageTargetResult.cs" t="Include" />
+              <e p="MLImageTracker.cs" t="Include" />
+              <e p="MLImageTrackerNativeBindings.cs" t="Include" />
+              <e p="MLImageTrackerSettings.cs" t="Include" />
+              <e p="MLImageTrackerTargetSettings.cs" t="Include" />
+              <e p="MLInput.cs" t="Include" />
+              <e p="MLInputController.cs" t="Include" />
+              <e p="MLInputControllerTouchpadGesture.cs" t="Include" />
+              <e p="MLInputNativeBindings.cs" t="Include" />
+              <e p="MLKeyPoint.cs" t="Include" />
+              <e p="MLKeyPoseManager.cs" t="Include" />
+              <e p="MLLightingTracker.cs" t="Include" />
+              <e p="MLLightingTrackingNativeBindings.cs" t="Include" />
+              <e p="MLLocalization.cs" t="Include" />
+              <e p="MLLocation.cs" t="Include" />
+              <e p="MLLocationData.cs" t="Include" />
+              <e p="MLLocationNativeBindings.cs" t="Include" />
+              <e p="MLMediaPlayer.cs" t="Include" />
+              <e p="MLMediaPlayerNativeBindings.cs" t="Include" />
+              <e p="MLMediaUtils.cs" t="Include" />
+              <e p="MLMovement.cs" t="Include" />
+              <e p="MLMovementNativeBindings.cs" t="Include" />
+              <e p="MLMovementSettings.cs" t="Include" />
+              <e p="MLMusicService.cs" t="Include" />
+              <e p="MLMusicServiceMetadata.cs" t="Include" />
+              <e p="MLMusicServiceNativeBindings.cs" t="Include" />
+              <e p="MLNetworking.cs" t="Include" />
+              <e p="MLNetworkingNativeBindings.cs" t="Include" />
+              <e p="MLNetworkingWifiData.cs" t="Include" />
+              <e p="MLPCF.cs" t="Include" />
+              <e p="MLPCFApiNativeBindings.cs" t="Include" />
+              <e p="MLPersistentCoordinateFrames.cs" t="Include" />
+              <e p="MLPersistentFileStorage.cs" t="Include" />
+              <e p="MLPersistentStore.cs" t="Include" />
+              <e p="MLPrivilegeIds.cs" t="Include" />
+              <e p="MLPrivileges.cs" t="Include" />
+              <e p="MLResult.cs" t="Include" />
+              <e p="MLScreens.cs" t="Include" />
+              <e p="MLScreensNativeBindings.cs" t="Include" />
+              <e p="MLSecureStorage.cs" t="Include" />
+              <e p="MLSnapshot.cs" t="Include" />
+              <e p="MLThumb.cs" t="Include" />
+              <e p="MLTokenAgent.cs" t="Include" />
+              <e p="MLTokenAgentNativeBindings.cs" t="Include" />
+              <e p="MLVerbosity.cs" t="Include" />
+              <e p="MLWorldPlanesQueryParams.cs" t="Include" />
+              <e p="MLWorldRays.cs" t="Include" />
+              <e p="MLWrist.cs" t="Include" />
+            </e>
+            <e p="LuminUnity.asmdef" t="Include" />
+            <e p="Utils" t="Include">
+              <e p="InvalidInstanceException.cs" t="Include" />
+              <e p="MLBitMask.cs" t="Include" />
+              <e p="MLConvert.cs" t="Include" />
+              <e p="MLDevice.cs" t="Include" />
+              <e p="MLPluginLog.cs" t="Include" />
+              <e p="MLTextureUtils.cs" t="Include" />
+              <e p="MLThreadDispatch.cs" t="Include" />
+              <e p="Timer.cs" t="Include" />
+            </e>
+          </e>
+          <e p="README.txt" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="BuildMabuWindow.cs" t="Include" />
+              <e p="BuildPreprocessor.cs" t="Include" />
+              <e p="MagicLeapLabExtension.cs" t="Include" />
+              <e p="MLVersionMenuItem.cs" t="Include" />
+            </e>
+            <e p="MLVersion.cs" t="Include" />
+            <e p="Utility" t="Include">
+              <e p="LocalizeManager.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Soundfield" t="Include">
+            <e p="Release Notes.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Samples" t="Include">
+          <e p="Magic Leap XR Plugin" t="Include">
+            <e p="4.1.3" t="Include">
+              <e p="Example XR Input Pose Providers - Requires Legacy Input Helpers 2.1.2" t="Include">
+                <e p="Unity.MagicLeap.Samples.InputProviders.asmdef" t="Include" />
+                <e p="XRInputControllerProvider.cs" t="Include" />
+                <e p="XRInputEyeTrackingProvider.cs" t="Include" />
+                <e p="XRInputHandProvider.cs" t="Include" />
+              </e>
+              <e p="MagicLeap Rendering Samples" t="Include">
+                <e p="Runtime" t="Include">
+                  <e p="StabilizationComponent.cs" t="Include" />
+                  <e p="Unity.MagicLeap.Samples.Rendering.asmdef" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="KaleidoscopeAR.sln" t="IncludeFlat" />
+      <e p="LuminUnity.csproj" t="IncludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
+      <e p="Unity.MagicLeap.Samples.InputProviders.csproj" t="IncludeRecursive" />
+      <e p="Unity.MagicLeap.Samples.Rendering.csproj" t="IncludeRecursive" />
+    </e>
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_KaleidoscopeAR.-2066780312.00" t="ExcludeRecursive" />
+  </component>
+</project>
