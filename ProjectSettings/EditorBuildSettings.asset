@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Aguro/Scenes/MagicLeapArFoundationReferencePoints.unity
     guid: 92da72731f2d94a27b5ff6ae0cef62da
+  - enabled: 0
+    path: Assets/MagicLeap/Examples/Intermediate/Scenes/HandMeshing.unity
+    guid: 973d66364d49a3d4e9aceb19ce1117cb
   m_configObjects:
     com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: aada8fd0da0c1482e8b996cc44d5b751,
       type: 2}

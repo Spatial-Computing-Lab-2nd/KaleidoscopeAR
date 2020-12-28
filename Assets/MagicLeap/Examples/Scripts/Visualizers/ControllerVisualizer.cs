@@ -10,6 +10,7 @@
 // ---------------------------------------------------------------------
 // %BANNER_END%
 
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.MagicLeap;
@@ -66,6 +67,20 @@ namespace MagicLeap
 
         private const float MAX_TRIGGER_ROTATION = 35.0f;
 
+        private float controllerTriggerValue;
+        public float ControllerTriggerValue {
+            get{ return controllerTriggerValue; }
+            private set{ controllerTriggerValue = value; }
+        }
+        
+        private float controllerTouchpadAngle;
+        public float ControllerTriggerAngle {
+            get{ return controllerTouchpadAngle; }
+            private set{ controllerTouchpadAngle = value; }
+        }
+
+        //ControllerManager.csでtrueを取得後にfalseに変更しています。
+        public bool IsControllerTouchpadOperating;
         /// <summary>
         /// Initialize variables, callbacks and check null references.
         /// </summary>
@@ -183,6 +198,13 @@ namespace MagicLeap
             {
                 _touchIndicatorTransform.gameObject.SetActive(true);
                 float angle = Mathf.Atan2(controller.Touch1PosAndForce.x, controller.Touch1PosAndForce.y);
+                ControllerTriggerAngle = angle * Mathf.Rad2Deg;
+                if (ControllerTriggerAngle<0)
+                {
+                    ControllerTriggerAngle += 360;
+                }
+
+                IsControllerTouchpadOperating = true;
                 _touchIndicatorTransform.localRotation = Quaternion.Euler(0, angle * Mathf.Rad2Deg, 0);
             }
             else
@@ -210,6 +232,7 @@ namespace MagicLeap
             #if PLATFORM_LUMIN
             // Change the color of the trigger
             _triggerMaterial.color = Color.Lerp(_defaultColor, _activeColor, controller.TriggerValue);
+            ControllerTriggerValue = controller.TriggerValue;
             #endif
 
             // Set the rotation of the trigger

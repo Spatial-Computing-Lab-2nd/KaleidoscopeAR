@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c52c149f-03a6-4f4b-94d0-6b96fb8e35f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KaleidoscopeAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KaleidoscopeAR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Aguro/Prefabs/Ball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Aguro/Prefabs/Ball.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Aguro/Script/ControllerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Aguro/Script/ControllerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Aguro/Script/MoveBall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Aguro/Script/MoveBall.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MagicLeap/Examples/Intermediate/Scenes/Meshing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MagicLeap/Examples/Intermediate/Scenes/Meshing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MagicLeap/Examples/Scripts/Visualizers/MeshingVisualizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MagicLeap/Examples/Scripts/Visualizers/MeshingVisualizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MagicLeap/Examples/Scripts/Visualizers/ControllerVisualizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MagicLeap/Examples/Scripts/Visualizers/ControllerVisualizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +23,7 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Aguro/Script/MoveBall.cs" />
         <option value="$PROJECT_DIR$/Assets/MagicLeap/Examples/Scripts/Visualizers/MeshingVisualizer.cs" />
+        <option value="$PROJECT_DIR$/Assets/MagicLeap/Examples/Scripts/Visualizers/ControllerVisualizer.cs" />
         <option value="$PROJECT_DIR$/Assets/Aguro/Script/ControllerManager.cs" />
       </list>
     </option>
@@ -73,7 +75,7 @@
       <updated>1608897061473</updated>
       <workItem from="1608897065031" duration="3281000" />
       <workItem from="1608990872653" duration="354000" />
-      <workItem from="1609051929119" duration="11568000" />
+      <workItem from="1609051929119" duration="22650000" />
     </task>
     <servers />
   </component>
@@ -90,5 +92,10 @@
       <screen x="0" y="23" width="1680" height="957" />
     </state>
     <state x="72" y="94" width="1608" height="938" key="dock-window-1/-91.-1057.1920.1057/0.23.1680.957@0.23.1680.957" timestamp="1609058547850" />
+    <state x="-91" y="-1057" width="960" height="987" key="dock-window-2" timestamp="1609153405044">
+      <screen x="-91" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="429" y="23" width="1251" height="956" maximized="true" key="dock-window-2/-91.-1057.1920.1057/0.23.1680.957@-91.-1057.1920.1057" timestamp="1609137726322" />
+    <state x="-91" y="-1057" width="960" height="987" key="dock-window-2/-91.-1057.1920.1057/0.23.1680.957@0.23.1680.957" timestamp="1609153405044" />
   </component>
 </project>
