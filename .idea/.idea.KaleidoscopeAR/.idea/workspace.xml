@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c52c149f-03a6-4f4b-94d0-6b96fb8e35f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KaleidoscopeAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KaleidoscopeAR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Aguro/Script/ControllerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Aguro/Script/ControllerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Aguro/Script/MoveBall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Aguro/Script/MoveBall.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MagicLeap/Examples/Intermediate/Scenes/Meshing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MagicLeap/Examples/Intermediate/Scenes/Meshing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MagicLeap/Examples/Scripts/Visualizers/MeshingVisualizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MagicLeap/Examples/Scripts/Visualizers/MeshingVisualizer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +20,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Assets/Aguro/Script/MoveBall.cs" />
+        <option value="$PROJECT_DIR$/Assets/MagicLeap/Examples/Scripts/Visualizers/MeshingVisualizer.cs" />
         <option value="$PROJECT_DIR$/Assets/Aguro/Script/ControllerManager.cs" />
       </list>
     </option>
@@ -68,6 +73,7 @@
       <updated>1608897061473</updated>
       <workItem from="1608897065031" duration="3281000" />
       <workItem from="1608990872653" duration="354000" />
+      <workItem from="1609051929119" duration="11568000" />
     </task>
     <servers />
   </component>
@@ -78,5 +84,11 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="72" y="94" width="1608" height="938" key="dock-window-1" timestamp="1609058547850">
+      <screen x="0" y="23" width="1680" height="957" />
+    </state>
+    <state x="72" y="94" width="1608" height="938" key="dock-window-1/-91.-1057.1920.1057/0.23.1680.957@0.23.1680.957" timestamp="1609058547850" />
   </component>
 </project>

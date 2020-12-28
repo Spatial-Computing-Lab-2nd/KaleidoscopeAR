@@ -138,7 +138,7 @@ namespace MagicLeap
         {
             if (meshRenderer != null)
             {
-                // Toggle the GameObject(s) and set the correct materia based on the current RenderMode.
+                //Toggle the GameObject(s) and set the correct materia based on the current RenderMode.
                 if (_renderMode == RenderMode.None)
                 {
                     meshRenderer.enabled = false;
@@ -150,8 +150,8 @@ namespace MagicLeap
                 }
                 else if (_renderMode == RenderMode.Wireframe)
                 {
-                    meshRenderer.enabled = true;
-                    meshRenderer.material = _wireframeMaterial;
+                meshRenderer.enabled = true;
+                meshRenderer.material = _wireframeMaterial;
                 }
                 else if (_renderMode == RenderMode.Occlusion)
                 {

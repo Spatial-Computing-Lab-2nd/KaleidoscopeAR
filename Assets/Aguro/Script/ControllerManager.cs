@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,7 +23,8 @@ public class ControllerManager : MonoBehaviour
     public event AddBallEventHandler BallAdded;
     public event AddBlackHoleEventHandler BlackHoleAdded;
     public event AddWhiteHoleEventHandler WhiteHoleAdded;
-    [SerializeField] private Text controllerModeText;
+    [SerializeField] private TextMesh controllerModeText;
+    private float controllerModeTextAlpha;
 
     private int resetCount;
     private int resetCountMax = 120;
@@ -34,7 +36,6 @@ public class ControllerManager : MonoBehaviour
         WhiteHole,
         CenterAxis
     }
-
     private int controllerModeMax = 4;
 
     private int controllerMode;
@@ -52,66 +53,33 @@ public class ControllerManager : MonoBehaviour
         MLInput.OnControllerTouchpadGestureStart += OnTouchPadGestureStart;
         MLInput.OnControllerTouchpadGestureContinue += OnTouchPadGestureContinue;
         MLInput.OnControllerTouchpadGestureEnd += OnTouchPadGestureEnd;
+
+        //MoveBallのBlackHoleAddedイベントを追加しなければならないため、最初にボールを出現させてエラーを回避しています。
+        //この書き方は良くないです。
+        GameObject tmpBall = Instantiate(ballGameObject, transform);
+        Destroy(tmpBall,0.1f);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            switch (controllerMode)
-            {
-                case (int) ControllerMode.Ball:
-                    Transform tmpTransform = transform;
-                    // tmpTransform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z);;
-                    // tmpTransform.rotation = transform.rotation;
-                    for (int i = 0; i < 6; i++)
-                    {
-                        {
-                            GameObject tmpBall =
-                                GameObject.Instantiate(ballGameObject) as GameObject; //runcherbulletにbulletのインスタンスを格納
-                            tmpBall.GetComponent<Rigidbody>().velocity =
-                                transform.forward; // * 3; //アタッチしているオブジェクトの前方にbullet speedの速さで発射
-                            tmpBall.transform.position = tmpTransform.position;
-                            tmpBall.transform.rotation = tmpTransform.rotation;
-                            //BallAdded();
-                            tmpTransform.RotateAround(CenterAxisGameObject.transform.position, Vector3.up, 360 / 6);
-                        }
-                    }
-                    break;
-                case (int) ControllerMode.BlackHole:
-                    GameObject tmpBlackHole =
-                        GameObject.Instantiate(blackHoleGameObject) as GameObject; //runcherbulletにbulletのインスタンスを格納
-                    // tmpBlackHole.GetComponent<Rigidbody>().velocity = transform.forward;// * 3; //アタッチしているオブジェクトの前方にbullet speedの速さで発射
-                    tmpBlackHole.transform.position = transform.position;
-                    BlackHoleAdded(tmpBlackHole);
-                    break;
-                case (int) ControllerMode.WhiteHole:
-                    GameObject tmpWhiteHole =
-                        GameObject.Instantiate(whiteHoleGameObject) as GameObject; //runcherbulletにbulletのインスタンスを格納
-                    // tmpWhiteHole.GetComponent<Rigidbody>().velocity = transform.forward;// * 3; //アタッチしているオブジェクトの前方にbullet speedの速さで発射
-                    tmpWhiteHole.transform.position = transform.position;
-                    WhiteHoleAdded(tmpWhiteHole);
-                    break;
-            }
+            GenerateEffect(0.5f);
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            controllerMode++;
-            controllerMode %= 3;
-            switch (controllerMode)
-            {
-                case (int) ControllerMode.Ball:
-                    controllerModeText.text = "Ball";
-                    break;
-                case (int) ControllerMode.BlackHole:
-                    controllerModeText.text = "BlackHole";
-                    break;
-                case (int) ControllerMode.WhiteHole:
-                    controllerModeText.text = "WhiteHole";
-                    break;
-            }
+            ChangeEffect();
         }
+
+        if (controller.TriggerValue >= 0.1f)
+        {
+            GenerateEffect(controller.TriggerValue);
+        }
+
+        controllerModeTextAlpha = Mathf.Max(controllerModeTextAlpha - 0.01f, 0.0f);
+        controllerModeText.color = new Color(1.0f,1.0f,1.0f,controllerModeTextAlpha);
+
     }
 
     void OnDestroy()
@@ -142,46 +110,10 @@ public class ControllerManager : MonoBehaviour
         switch (button)
         {
             case MLInput.Controller.Button.Bumper:
-                switch (controllerMode)
-                {
-                    case (int) ControllerMode.Ball:
-                        for (int i = 0; i < 6; i++)
-                        {
-                            Transform tmpTransform = transform;
-                            GameObject tmpBall =
-                                GameObject.Instantiate(ballGameObject) as GameObject; //runcherbulletにbulletのインスタンスを格納
-                            tmpBall.GetComponent<Rigidbody>().velocity =
-                                transform.forward; // * 3; //アタッチしているオブジェクトの前方にbullet speedの速さで発射
-                            tmpBall.transform.position = transform.position;
-                            tmpBall.transform.rotation = transform.rotation;
-                            //BallAdded();
-                            tmpTransform.RotateAround(CenterAxisGameObject.transform.position,Vector3.up, 360/6);
-                        }
-
-                        break;
-                    case (int) ControllerMode.BlackHole:
-                        GameObject tmpBlackHole =
-                            GameObject.Instantiate(blackHoleGameObject) as GameObject; //runcherbulletにbulletのインスタンスを格納
-                        // tmpBlackHole.GetComponent<Rigidbody>().velocity = transform.forward;// * 3; //アタッチしているオブジェクトの前方にbullet speedの速さで発射
-                        tmpBlackHole.transform.position = transform.position;
-                        BlackHoleAdded(tmpBlackHole);
-                        break;
-                    case (int) ControllerMode.WhiteHole:
-                        GameObject tmpWhiteHole =
-                            GameObject.Instantiate(whiteHoleGameObject) as GameObject; //runcherbulletにbulletのインスタンスを格納
-                        // tmpWhiteHole.GetComponent<Rigidbody>().velocity = transform.forward;// * 3; //アタッチしているオブジェクトの前方にbullet speedの速さで発射
-                        tmpWhiteHole.transform.position = transform.position;
-                        WhiteHoleAdded(tmpWhiteHole);
-                        break;
-                    case (int) ControllerMode.CenterAxis:
-                        CenterAxisGameObject.transform.position = transform.position;
-                        break;
-                }
-
+                ChangeEffect();
                 break;
-
             case MLInput.Controller.Button.HomeTap:
-                Application.Quit();
+                //Application.Quit();
                 break;
         }
     }
@@ -216,23 +148,25 @@ public class ControllerManager : MonoBehaviour
         byte controllerId,
         float value)
     {
-        controllerMode++;
-        controllerMode %= controllerModeMax;
-        switch (controllerMode)
-        {
-            case (int) ControllerMode.Ball:
-                controllerModeText.text = "Ball";
-                break;
-            case (int) ControllerMode.BlackHole:
-                controllerModeText.text = "BlackHole";
-                break;
-            case (int) ControllerMode.WhiteHole:
-                controllerModeText.text = "WhiteHole";
-                break;
-            case (int) ControllerMode.CenterAxis:
-                controllerModeText.text = "CenterAxis";
-                break;
-        }
+        //GenerateEffect(value);
+
+        // controllerMode++;
+        // controllerMode %= controllerModeMax;
+        // switch (controllerMode)
+        // {
+        //     case (int) ControllerMode.Ball:
+        //         controllerModeText.text = "Ball";
+        //         break;
+        //     case (int) ControllerMode.BlackHole:
+        //         controllerModeText.text = "BlackHole";
+        //         break;
+        //     case (int) ControllerMode.WhiteHole:
+        //         controllerModeText.text = "WhiteHole";
+        //         break;
+        //     case (int) ControllerMode.CenterAxis:
+        //         controllerModeText.text = "CenterAxis";
+        //         break;
+        //}
     }
 
 
@@ -257,7 +191,7 @@ public class ControllerManager : MonoBehaviour
         byte controllerId,
         MLInput.Controller.TouchpadGesture gesture)
     {
-        SceneManager.LoadScene("MagicLeapArFoundationReferencePoints");
+        //SceneManager.LoadScene("MagicLeapArFoundationReferencePoints");
 
         //resetCount = 0;
     }
@@ -288,5 +222,111 @@ public class ControllerManager : MonoBehaviour
         byte controllerId,
         MLInput.Controller.TouchpadGesture gesture)
     {
+    }
+
+    void GenerateEffect(float triggerPower)
+    {
+        switch (controllerMode)
+        {
+            case (int) ControllerMode.Ball:
+                AddBall(triggerPower);
+                break;
+            case (int) ControllerMode.BlackHole:
+                AddBlackHole();
+                break;
+            case (int) ControllerMode.WhiteHole:
+                AddWhiteHole();
+                break;
+            case (int) ControllerMode.CenterAxis:
+                var tmpTransform = transform;
+                CenterAxisGameObject.transform.position = tmpTransform.position;
+                CenterAxisGameObject.transform.rotation = tmpTransform.rotation;
+                break;
+        }
+    }
+
+    void ChangeEffect()
+    {
+        controllerMode++;
+        controllerMode %= controllerModeMax;
+        switch (controllerMode)
+        {
+            case (int) ControllerMode.Ball:
+                controllerModeText.text = "エフェクトの種類\n流れ星";
+                break;
+            case (int) ControllerMode.BlackHole:
+                controllerModeText.text = "エフェクトの種類\nブラックホール";
+                break;
+            case (int) ControllerMode.WhiteHole:
+                controllerModeText.text = "エフェクトの種類\nホワイトホール";
+                break;
+            case (int) ControllerMode.CenterAxis:
+                controllerModeText.text = "エフェクトの種類\n万華鏡の中心軸を配置する";
+                break;
+        }
+        controllerModeTextAlpha = 1.0f;
+    }
+
+    void AddBall(float triggerValue)
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            Transform tmpTransform = transform;
+            GameObject tmpBall =
+                GameObject.Instantiate(ballGameObject, CenterAxisGameObject.transform, true) as GameObject; //runcherbulletにbulletのインスタンスを格納
+            tmpBall.GetComponent<Rigidbody>().velocity =
+                transform.forward * (5 * triggerValue);
+            tmpBall.transform.position = tmpTransform.position;
+            tmpBall.transform.rotation = tmpTransform.rotation;
+            //BallAdded();
+            tmpTransform.RotateAround(CenterAxisGameObject.transform.position, CenterAxisGameObject.transform.up, 360 / 6);
+            Destroy(tmpBall, 10.0f);
+        }
+    }
+
+    void AddBlackHole()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            Transform tmpTransform = transform;
+            GameObject tmpBlackHole =
+                GameObject.Instantiate(blackHoleGameObject) as GameObject;
+            tmpBlackHole.transform.parent = CenterAxisGameObject.transform;
+            tmpBlackHole.transform.position = transform.position;
+            BlackHoleAdded(tmpBlackHole);
+            tmpBlackHole.transform.position = transform.position;
+            tmpBlackHole.transform.rotation = transform.rotation;
+            tmpTransform.RotateAround(CenterAxisGameObject.transform.position, CenterAxisGameObject.transform.up, 360 / 6);
+            Destroy(tmpBlackHole, 20.0f);
+        }
+    }
+
+    void AddWhiteHole()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            Transform tmpTransform = transform;
+            GameObject tmpWhiteHole =
+                GameObject.Instantiate(whiteHoleGameObject) as GameObject;
+            tmpWhiteHole.transform.parent = CenterAxisGameObject.transform;
+            tmpWhiteHole.transform.position = transform.position;
+            WhiteHoleAdded(tmpWhiteHole);
+            tmpWhiteHole.transform.position = transform.position;
+            tmpWhiteHole.transform.rotation = transform.rotation;
+            tmpTransform.RotateAround(CenterAxisGameObject.transform.position, CenterAxisGameObject.transform.up, 360 / 6);
+            Destroy(tmpWhiteHole, 20.0f);
+        }
+    }
+    
+    /// <summary>
+    /// 渡された処理を指定時間後に実行する
+    /// </summary>
+    /// <param name="waitTime">遅延時間[ミリ秒]</param>
+    /// <param name="action">実行したい処理</param>
+    /// <returns></returns>
+    private IEnumerator DelayMethod(float waitTime, Action action)
+    {
+        yield return new WaitForSeconds(waitTime);
+        action();
     }
 }
