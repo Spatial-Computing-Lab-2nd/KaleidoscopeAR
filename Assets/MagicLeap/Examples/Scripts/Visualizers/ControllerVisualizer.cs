@@ -79,8 +79,16 @@ namespace MagicLeap
             private set{ controllerTouchpadAngle = value; }
         }
 
+        //タッチパッドの中心から外側までの距離
+        private float controllerTouchpadSquaredDistance;
+        public float ControllerTouchpadSquaredDistance {
+            get{ return controllerTouchpadSquaredDistance; }
+            private set{ controllerTouchpadSquaredDistance = value; }
+        }
+
         //ControllerManager.csでtrueを取得後にfalseに変更しています。
         public bool IsControllerTouchpadOperating;
+        
         /// <summary>
         /// Initialize variables, callbacks and check null references.
         /// </summary>
@@ -203,8 +211,9 @@ namespace MagicLeap
                 {
                     ControllerTriggerAngle += 360;
                 }
-
                 IsControllerTouchpadOperating = true;
+                controllerTouchpadSquaredDistance = _touchIndicatorTransform.localPosition.sqrMagnitude;
+                
                 _touchIndicatorTransform.localRotation = Quaternion.Euler(0, angle * Mathf.Rad2Deg, 0);
             }
             else
