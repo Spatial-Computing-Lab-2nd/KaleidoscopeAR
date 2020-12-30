@@ -15,6 +15,10 @@ public class ControllerManager : MonoBehaviour
     [SerializeField] private GameObject blackHoleGameObject;
     [SerializeField] private GameObject whiteHoleGameObject;
     [SerializeField] private GameObject CenterAxisGameObject;
+    [SerializeField] private GameObject UIGameObject;
+    [SerializeField] private GameObject CameraGameObject;
+    [SerializeField] private GameObject transparentBlackHoleGameObject;
+    [SerializeField] private List<GameObject> transparentBlackHoleGameObjectList;
 
     //コントローラーの位置はガタガタと震えてしまうため、滑らかにする
     private Transform smoothControllerTransform;
@@ -52,18 +56,21 @@ public class ControllerManager : MonoBehaviour
     //1フレーム前にタッチパッドを触っていたか
     private bool isColorpadTouchingBefore;
 
+    //1フレーム前にトリガーを引いていたか
+    private bool isTriggerPullingBefore;
+
     enum ControllerMode
     {
-        Ball,
+        Kaleidoscope,
 
         // BlackHole,
         // WhiteHole,
-        CenterAxis
+        Menu
     }
 
     private int controllerModeMax = 2;
 
-    private int controllerMode = (int) ControllerMode.CenterAxis;
+    private int controllerMode = (int) ControllerMode.Menu;
 
     void Start()
     {
@@ -94,12 +101,39 @@ public class ControllerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            ChangeEffect();
+            ChangeMode();
         }
 
         if (_controllerVisualizer.ControllerTriggerValue >= 0.05f)
         {
+            if (!isTriggerPullingBefore);
+            {
+                isTriggerPullingBefore = true;
+                CenterAxisGameObject.transform.position = CameraGameObject.transform.position;
+                CenterAxisGameObject.transform.rotation = CameraGameObject.transform.rotation;
+                CenterAxisGameObject.transform.Rotate(90.0f, 0.0f, 0.0f);
+                CenterAxisGameObject.transform.Translate(0.0f, 5.0f, 0.0f);
+                for (int i = 0; i < 4; i++)
+                {
+                    if (transparentBlackHoleGameObjectList[i])
+                    {
+                        transparentBlackHoleGameObjectList[i].tag = "None";
+                        Destroy(transparentBlackHoleGameObjectList[i],10.0f);
+                    }
+                    transparentBlackHoleGameObjectList[i] = Instantiate(transparentBlackHoleGameObject);
+                    transparentBlackHoleGameObjectList[i].transform.position = CenterAxisGameObject.transform.position;
+                    transparentBlackHoleGameObjectList[i].transform.rotation = CenterAxisGameObject.transform.rotation;
+                    transparentBlackHoleGameObjectList[i].transform
+                        .Translate(0.0f,((i - 1) * 2.5f),0.0f);
+                    transparentBlackHoleGameObjectList[i].tag = "BlackHole";
+                }
+            }
+
             GenerateEffect(_controllerVisualizer.ControllerTriggerValue);
+        }
+        if (_controllerVisualizer.ControllerTriggerValue >= 0.9f)
+        {
+            isTriggerPullingBefore = false;
         }
 
         controllerModeTextAlpha -= 0.0025f;
@@ -111,8 +145,9 @@ public class ControllerManager : MonoBehaviour
                 isColorpadTouchingBefore = true;
                 ballRendererEndColor = ballRendererStartColor;
             }
+
             _controllerVisualizer.IsControllerTouchpadOperating = false;
-            if (controllerMode == (int) ControllerMode.Ball)
+            //if (controllerMode == (int) ControllerMode.Kaleidoscope)
             {
                 float tmpSaturation = _controllerVisualizer.ControllerTouchpadSquaredDistance / (0.01f * 0.01f);
                 tmpSaturation = Mathf.Clamp(tmpSaturation, 0.0f, 1.0f);
@@ -122,20 +157,20 @@ public class ControllerManager : MonoBehaviour
                 CenterAxisGameObject.GetComponent<Renderer>().material.color = touchpadColor;
                 ballRendererStartColor = touchpadColor;
             }
-            else if (controllerMode == (int) ControllerMode.CenterAxis)
-            {
-                controllerModeText.text =
-                    "<設定モード>\nトリガー：万華鏡の中心軸を配置しなおす\nトラックパッド：鏡の数を変更する\n鏡の数：" + mirrorCount.ToString();
-                controllerModeTextAlpha = 1.0f;
-                if ((int) _controllerVisualizer.ControllerTriggerAngle <= 15)
-                {
-                    mirrorCount = 12;
-                }
-                else
-                {
-                    mirrorCount = ((int) _controllerVisualizer.ControllerTriggerAngle - 15) / 30 + 1;
-                }
-            }
+            // else if (controllerMode == (int) ControllerMode.Menu)
+            // {
+            // controllerModeText.text =
+            //     "<設定モード>\nトリガー：万華鏡の中心軸を配置しなおす\nトラックパッド：鏡の数を変更する\n鏡の数：" + mirrorCount.ToString();
+            // controllerModeTextAlpha = 1.0f;
+            // if ((int) _controllerVisualizer.ControllerTriggerAngle <= 15)
+            // {
+            //     mirrorCount = 12;
+            // }
+            // else
+            // {
+            //     mirrorCount = ((int) _controllerVisualizer.ControllerTriggerAngle - 15) / 30 + 1;
+            // }
+            // }
         }
         else
         {
@@ -169,9 +204,10 @@ public class ControllerManager : MonoBehaviour
         switch (button)
         {
             case MLInput.Controller.Button.Bumper:
-                ChangeEffect();
+                //ChangeMode();
                 break;
             case MLInput.Controller.Button.HomeTap:
+                ChangeMode();
                 //Application.Quit();
                 break;
         }
@@ -268,7 +304,7 @@ public class ControllerManager : MonoBehaviour
     {
         switch (controllerMode)
         {
-            case (int) ControllerMode.Ball:
+            case (int) ControllerMode.Kaleidoscope:
                 AddBall(triggerPower);
                 break;
             // case (int) ControllerMode.BlackHole:
@@ -277,26 +313,28 @@ public class ControllerManager : MonoBehaviour
             // case (int) ControllerMode.WhiteHole:
             //     AddWhiteHole();
             //     break;
-            case (int) ControllerMode.CenterAxis:
-                var tmpTransform = transform;
-                CenterAxisGameObject.transform.position = tmpTransform.position;
-                CenterAxisGameObject.transform.rotation = tmpTransform.rotation;
-                CenterAxisGameObject.transform.Rotate(90.0f, 0.0f, 0.0f);
-                CenterAxisGameObject.transform.Translate(0.0f, 5.0f, 0.0f);
+            case (int) ControllerMode.Menu:
+                // var tmpTransform = transform;
+                // CenterAxisGameObject.transform.position = tmpTransform.position;
+                // CenterAxisGameObject.transform.rotation = tmpTransform.rotation;
+                // CenterAxisGameObject.transform.Rotate(90.0f, 0.0f, 0.0f);
+                // CenterAxisGameObject.transform.Translate(0.0f, 5.0f, 0.0f);
                 break;
         }
     }
 
-    void ChangeEffect()
+    void ChangeMode()
     {
+        UIGameObject.SetActive(!UIGameObject.activeSelf);
         controllerMode++;
         controllerMode %= controllerModeMax;
         switch (controllerMode)
         {
-            case (int) ControllerMode.Ball:
-                controllerModeText.text = "<万華鏡モード>\nトリガー：流れ星を放つ\nトラックパッド：色を変更する";
-                ClockBlankSpriteObject.SetActive(false);
-                colorPaletteSpriteObject.SetActive(true);
+            case (int) ControllerMode.Kaleidoscope:
+                controllerModeText.text = "流れ星の放つ数：" + mirrorCount.ToString();
+                // controllerModeText.text = "<万華鏡モード>\nトリガー：流れ星を放つ\nトラックパッド：色を変更する";
+                // ClockBlankSpriteObject.SetActive(false);
+                // colorPaletteSpriteObject.SetActive(true);
                 break;
             // case (int) ControllerMode.BlackHole:
             //     controllerModeText.text = "エフェクトの種類\nブラックホール";
@@ -304,15 +342,15 @@ public class ControllerManager : MonoBehaviour
             // case (int) ControllerMode.WhiteHole:
             //     controllerModeText.text = "エフェクトの種類\nホワイトホール";
             //     break;
-            case (int) ControllerMode.CenterAxis:
-                controllerModeText.text =
-                    "<設定モード>\nトリガー：万華鏡の中心軸を配置しなおす\nトラックパッド：鏡の数を変更する\n鏡の数：" + mirrorCount.ToString();
-                ClockBlankSpriteObject.SetActive(true);
-                colorPaletteSpriteObject.SetActive(false);
+            case (int) ControllerMode.Menu:
+                // controllerModeText.text =
+                //     "<設定モード>\nトリガー：万華鏡の中心軸を配置しなおす\nトラックパッド：鏡の数を変更する\n鏡の数：" + mirrorCount.ToString();
+                // ClockBlankSpriteObject.SetActive(true);
+                // colorPaletteSpriteObject.SetActive(false);
                 break;
         }
 
-        controllerModeTextAlpha = 1.0f;
+        //controllerModeTextAlpha = 1.0f;
     }
 
     void AddBall(float triggerValue)
@@ -324,7 +362,7 @@ public class ControllerManager : MonoBehaviour
                 GameObject.Instantiate(ballGameObject) as GameObject;
             tmpBall.transform.position = tmpTransform.position;
             tmpBall.transform.rotation = tmpTransform.rotation;
-            tmpBall.transform.parent = CenterAxisGameObject.transform;
+            //tmpBall.transform.parent = CenterAxisGameObject.transform;
             TrailRenderer tmpBallTrailRenderer;
             tmpBallTrailRenderer = tmpBall.GetComponent<TrailRenderer>();
             tmpBallTrailRenderer.startColor = ballRendererStartColor;

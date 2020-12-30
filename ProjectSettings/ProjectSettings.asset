@@ -686,8 +686,8 @@ PlayerSettings:
     UNet: 1
   luminIcon:
     m_Name: 
-    m_ModelFolderPath: Assets/Aguro/Images/Icon
-    m_PortalFolderPath: 
+    m_ModelFolderPath: Assets/Aguro/Icon/Model
+    m_PortalFolderPath: Assets/Aguro/Icon/Portal
   luminCert:
     m_CertPath: /Users/aguroshou/Documents/MagicLeap/privatekey/shouagurodevelop.cert
     m_SignPackage: 1
