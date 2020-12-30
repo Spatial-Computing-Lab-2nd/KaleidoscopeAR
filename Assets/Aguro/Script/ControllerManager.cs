@@ -106,7 +106,7 @@ public class ControllerManager : MonoBehaviour
 
         if (_controllerVisualizer.ControllerTriggerValue >= 0.05f)
         {
-            if (!isTriggerPullingBefore);
+            if (!isTriggerPullingBefore) ;
             {
                 isTriggerPullingBefore = true;
                 CenterAxisGameObject.transform.position = CameraGameObject.transform.position;
@@ -118,23 +118,24 @@ public class ControllerManager : MonoBehaviour
                     if (transparentBlackHoleGameObjectList[i])
                     {
                         transparentBlackHoleGameObjectList[i].tag = "None";
-                        Destroy(transparentBlackHoleGameObjectList[i],10.0f);
+                        Destroy(transparentBlackHoleGameObjectList[i], 10.0f);
                     }
+
                     transparentBlackHoleGameObjectList[i] = Instantiate(transparentBlackHoleGameObject);
                     transparentBlackHoleGameObjectList[i].transform.position = CenterAxisGameObject.transform.position;
                     transparentBlackHoleGameObjectList[i].transform.rotation = CenterAxisGameObject.transform.rotation;
                     transparentBlackHoleGameObjectList[i].transform
-                        .Translate(0.0f,((i - 1) * 2.5f),0.0f);
+                        .Translate(0.0f, ((i - 1) * 2.5f), 0.0f);
                     transparentBlackHoleGameObjectList[i].tag = "BlackHole";
                 }
             }
 
             GenerateEffect(_controllerVisualizer.ControllerTriggerValue);
         }
-        if (_controllerVisualizer.ControllerTriggerValue >= 0.9f)
-        {
-            isTriggerPullingBefore = false;
-        }
+        // if (_controllerVisualizer.ControllerTriggerValue >= 0.9f)
+        // {
+        //     isTriggerPullingBefore = false;
+        // }
 
         controllerModeTextAlpha -= 0.0025f;
         controllerModeText.color = new Color(1.0f, 1.0f, 1.0f, controllerModeTextAlpha);
@@ -204,6 +205,17 @@ public class ControllerManager : MonoBehaviour
         switch (button)
         {
             case MLInput.Controller.Button.Bumper:
+                if (controllerMode == (int) ControllerMode.Kaleidoscope)
+                {
+                    mirrorCount %= 12;
+                    mirrorCount++;
+                    controllerModeText.text =
+                        "流れ星を放つ数：" + mirrorCount.ToString();
+                    controllerModeTextAlpha = 1.0f;
+                    transform.localPosition = Vector3.zero;
+                    transform.localRotation = Quaternion.identity;
+                }
+
                 //ChangeMode();
                 break;
             case MLInput.Controller.Button.HomeTap:
@@ -331,7 +343,7 @@ public class ControllerManager : MonoBehaviour
         switch (controllerMode)
         {
             case (int) ControllerMode.Kaleidoscope:
-                controllerModeText.text = "流れ星の放つ数：" + mirrorCount.ToString();
+                //controllerModeText.text = "流れ星の放つ数：" + mirrorCount.ToString();
                 // controllerModeText.text = "<万華鏡モード>\nトリガー：流れ星を放つ\nトラックパッド：色を変更する";
                 // ClockBlankSpriteObject.SetActive(false);
                 // colorPaletteSpriteObject.SetActive(true);
