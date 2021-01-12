@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c52c149f-03a6-4f4b-94d0-6b96fb8e35f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KaleidoscopeAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KaleidoscopeAR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Aguro/Prefabs/TransparentBlackHole.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Aguro/Prefabs/TransparentBlackHole.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Aguro/Script/ControllerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Aguro/Script/ControllerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Lumin/MagicLeapManifestSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Lumin/MagicLeapManifestSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Lumin/manifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Lumin/manifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,7 @@
         <option value="$PROJECT_DIR$/Assets/MagicLeap/Examples/Scripts/Visualizers/MeshingVisualizer.cs" />
         <option value="$PROJECT_DIR$/Assets/MagicLeap/Examples/Scripts/Visualizers/ControllerVisualizer.cs" />
         <option value="$PROJECT_DIR$/Assets/Aguro/Script/ControllerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/Lumin/manifest.xml" />
       </list>
     </option>
   </component>
@@ -74,7 +76,8 @@
       <workItem from="1608897065031" duration="3281000" />
       <workItem from="1608990872653" duration="354000" />
       <workItem from="1609051929119" duration="34207000" />
-      <workItem from="1609309401725" duration="9066000" />
+      <workItem from="1609309401725" duration="9398000" />
+      <workItem from="1609768579672" duration="1173000" />
     </task>
     <servers />
   </component>

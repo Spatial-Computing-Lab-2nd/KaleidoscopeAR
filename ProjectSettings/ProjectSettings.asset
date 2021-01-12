@@ -689,7 +689,7 @@ PlayerSettings:
     m_ModelFolderPath: Assets/Aguro/Icon/Model
     m_PortalFolderPath: Assets/Aguro/Icon/Portal
   luminCert:
-    m_CertPath: /Users/aguroshou/Documents/MagicLeap/privatekey/shouagurodevelop.cert
+    m_CertPath: /Users/aguroshou/Documents/MagicLeap/ShootingStarKaleidoscopeStoreCertificate/shooting-star-kaleidoscope-ae0caa7c.cert
     m_SignPackage: 1
   luminIsChannelApp: 0
   luminVersion:
@@ -703,4 +703,4 @@ PlayerSettings:
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
-  legacyClampBlendShapeWeights: 1
+  legacyClampBlendShapeWeights: 0
